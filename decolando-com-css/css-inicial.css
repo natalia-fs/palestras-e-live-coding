@@ -1,0 +1,78 @@
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis */
+:root{
+  --azul: #54aeef;
+  --vermelho: #a10018;
+  --chama-01: #ffae30;
+  --chama-02: #ffcd4c;
+}
+
+body{
+  background: #222;
+  height: 100vh;
+  /* Centralizar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Esconder barra de scroll */
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+.foguete{
+  background: var(--azul);
+}
+
+.janela{
+  position: relative;
+} 
+
+.janela::before{
+  content: "";
+  position: absolute;
+}
+
+.asas{
+  position: absolute;
+  
+}
+.asas::before{
+  content: "";
+  position: absolute;
+
+}
+.detalhe-asas{
+  position: absolute;
+
+}
+.asa-meio{
+  position: absolute;
+
+}
+.asa-meio::before{
+  content: "";
+  position: absolute;
+
+}
+.chama{
+  position: absolute;
+
+}
+
+.chama::before{
+  content: "";
+  position: absolute;
+
+}
