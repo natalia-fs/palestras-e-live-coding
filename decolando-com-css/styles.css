@@ -1,0 +1,148 @@
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis */
+:root{
+  --azul: #54aeef;
+  --vermelho: #a10018;
+  --chama-01: #ffae30;
+  --chama-02: #ffcd4c;
+}
+
+body{
+  background: #222;
+  height: 100vh;
+  /* Centralizar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Esconder barra de scroll */
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+/* Animação de decolagem */
+.container:hover{
+  animation: decolar 2s ease;
+}
+@keyframes decolar {
+  50% { transform: rotate(45deg);}
+  100% { transform: rotate(45deg) translate(500px, -1500px);}
+}
+
+.foguete{
+  background: var(--azul);
+  width: 120px;
+  height: 240px;
+  border-radius: 50% / 70% 70% 30% 30%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.janela{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #000;
+  top: 20%;
+  border-radius: 50%;
+} 
+
+.janela::before{
+  content: "";
+  position: absolute;
+  background: var(--azul);
+  width: 60px;
+  height: 60px;
+  top: 35%;
+  border-radius: 50%;
+}
+
+.asas{
+  position: absolute;
+  width: 200px;
+  height: 70px;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.asas::before{
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 50px;
+  border-radius: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 25px);
+  box-shadow: 0 0 0 70px var(--vermelho);
+}
+.detalhe-asas{
+  position: absolute;
+  width: 120px;
+  height: 45px;
+  background: var(--vermelho);
+  bottom: 84px;
+  transform: 
+    perspective(3px)
+    rotateX(3deg)
+  ;
+  z-index: -1;
+}
+.asa-meio{
+  position: absolute;
+  background: var(--vermelho);
+  width: 35px;
+  height: 35px;
+  border-radius: 0 50%;
+  transform: rotate(45deg);
+  bottom: -5%;
+}
+.asa-meio::before{
+  content: "";
+  position: absolute;
+  background: var(--vermelho);
+  width: 35px;
+  height: 70px;
+  left: 50%;
+  border-radius: 50% 50% 0 0;
+  transform:
+    rotateZ(-45deg)
+    translate(0, -90px)
+    perspective(1px)
+    rotateX(0.75deg)
+    scaleX(0.55);
+}
+.chama{
+  position: absolute;
+  background: var(--chama-01);
+  width: 75px;
+  height: 75px;
+  border-radius: 0 70%;
+  transform: rotate(45deg);
+  z-index: -1;
+  bottom: -25%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chama::before{
+  content: "";
+  position: absolute;
+  background: var(--chama-02);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}

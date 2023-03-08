@@ -27,8 +27,6 @@ body{
 .container{
   position: relative;
 
-  display: flex;
-  justify-content: center;
 }
 
 .foguete{
