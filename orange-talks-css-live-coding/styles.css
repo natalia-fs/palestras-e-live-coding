@@ -1,0 +1,140 @@
+:root{
+  --marrom-escuro: #43210a;
+  --marrom-claro: #6b320d;
+  --chocolate: #7e4016;
+
+  --alaranjado: #fab260;
+  --laranja: #ff5c35;
+
+  --branco: #e5e5e5;
+
+  --background: #ffebca;
+
+  --gap: 10px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+  width: 400px;
+  height: 600px;
+
+  overflow: hidden;
+}
+
+.chocolate{
+  width: 400px;
+  padding: var(--gap);
+
+  background: var(--marrom-escuro);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gap);
+  border: 10px outset var(--chocolate);
+}
+
+.divisao{
+  width: 100%;
+  height: 100px;
+  background: var(--marrom-claro);
+  border: 10px outset var(--chocolate);
+}
+
+.embalagem{
+  position: relative;
+  z-index: 1;
+  background: var(--alaranjado);
+  width: 400px;
+  height: 300px;
+
+  top: -10%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.embalagem::before,
+.embalagem::after{
+  content: "";
+  position: absolute;
+}
+
+.embalagem::before{
+  width: 400px;
+  height: 150px;
+  background: inherit;
+  transform: skewY(10deg) translateY(-25%);
+}
+
+.embalagem::after{
+  width: 0;
+  height: 0;
+  border: 200px solid transparent;
+  border-top: 50px solid var(--alaranjado);
+  transform: rotate(10deg) translate(50%, -14%);
+  filter: brightness(0.7);
+}
+
+.marca{
+  position: relative;
+  background: var(--branco);
+  width: 250px;
+  height: 250px;
+  z-index: 2;
+  top: 7.5%;
+
+  border-radius: 50% 0 50% 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marca>div{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.default{
+  height: 50px;
+  background: var(--laranja);
+}
+.marca-topo{
+  display: flex;
+  gap: var(--gap);
+}
+.topo-1{
+  width: 50px;
+  border-radius: 50% 0;
+}
+.topo-2{
+  width: 80px;
+  border-radius: 0 0 25px 0;
+}
+
+.marca-meio{
+  width: 90px;
+  border-radius: 25px 0;
+}
+
+.marca-base{
+  width: 50px;
+  border-radius: 50% 0;
+}
